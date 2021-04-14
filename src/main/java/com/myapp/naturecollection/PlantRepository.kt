@@ -22,13 +22,13 @@ class PlantRepository {
 
     object Singleton {
         // Lien bucket
-        private val BUCKET_URL:String = "gs://naturecollection-f86e8.appspot.com"
+        private val BUCKET_URL:String = ""
 
         // se connecter a storage
         val storageReference = FirebaseStorage.getInstance().getReferenceFromUrl(BUCKET_URL)
 
         // se connecter a la ref plants
-        val databaseRef = FirebaseDatabase.getInstance("https://naturecollection-f86e8-default-rtdb.firebaseio.com/").getReference("plants")
+        val databaseRef = FirebaseDatabase.getInstance().getReference("plants")
 
         // creer liste de plants
         val plantList = arrayListOf<PlantModel>()
